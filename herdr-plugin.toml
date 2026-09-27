@@ -3,7 +3,7 @@ name = "Herdr Arcade"
 version = "2.1.0"
 min_herdr_version = "0.9.1"
 platforms = ["macos", "linux"]
-description = "Terminal arcade (Tetris, Pac-Man) in a popup pane that pauses itself when a session agent needs attention."
+description = "Seventeen golden-era arcade games in a popup pane that pauses itself when a session agent needs attention."
 
 # One entrypoint per start screen: the splash menu, and each game directly
 # (what the per-game actions below open, so a key binding can jump straight
@@ -106,6 +106,54 @@ width = 96
 height = 30
 command = ["sh", "-c", "exec python3 \"$HERDR_PLUGIN_ROOT/arcade.py\" --game loderunner"]
 
+[[panes]]
+id = "donkeykong"
+title = "Herdr Arcade: Donkey Kong"
+placement = "popup"
+width = 96
+height = 30
+command = ["sh", "-c", "exec python3 \"$HERDR_PLUGIN_ROOT/arcade.py\" --game donkeykong"]
+
+[[panes]]
+id = "digdug"
+title = "Herdr Arcade: Dig Dug"
+placement = "popup"
+width = 96
+height = 30
+command = ["sh", "-c", "exec python3 \"$HERDR_PLUGIN_ROOT/arcade.py\" --game digdug"]
+
+[[panes]]
+id = "qbert"
+title = "Herdr Arcade: Q*bert"
+placement = "popup"
+width = 96
+height = 30
+command = ["sh", "-c", "exec python3 \"$HERDR_PLUGIN_ROOT/arcade.py\" --game qbert"]
+
+[[panes]]
+id = "sokoban"
+title = "Herdr Arcade: Sokoban"
+placement = "popup"
+width = 96
+height = 30
+command = ["sh", "-c", "exec python3 \"$HERDR_PLUGIN_ROOT/arcade.py\" --game sokoban"]
+
+[[panes]]
+id = "bomberman"
+title = "Herdr Arcade: Bomberman"
+placement = "popup"
+width = 96
+height = 30
+command = ["sh", "-c", "exec python3 \"$HERDR_PLUGIN_ROOT/arcade.py\" --game bomberman"]
+
+[[panes]]
+id = "boulderdash"
+title = "Herdr Arcade: Boulder Dash"
+placement = "popup"
+width = 96
+height = 30
+command = ["sh", "-c", "exec python3 \"$HERDR_PLUGIN_ROOT/arcade.py\" --game boulderdash"]
+
 # toggle/open/close manage the popup on the menu. The per-game actions are
 # the ones to bind to keys: each opens its game directly, closes the popup
 # when that game is already showing, and switches over from any other screen.
@@ -192,3 +240,39 @@ id = "loderunner"
 title = "Herdr Arcade: play Lode Runner"
 contexts = ["pane", "workspace"]
 command = ["bash", "herdr/pane.sh", "game", "loderunner"]
+
+[[actions]]
+id = "donkeykong"
+title = "Herdr Arcade: play Donkey Kong"
+contexts = ["pane", "workspace"]
+command = ["bash", "herdr/pane.sh", "game", "donkeykong"]
+
+[[actions]]
+id = "digdug"
+title = "Herdr Arcade: play Dig Dug"
+contexts = ["pane", "workspace"]
+command = ["bash", "herdr/pane.sh", "game", "digdug"]
+
+[[actions]]
+id = "qbert"
+title = "Herdr Arcade: play Q*bert"
+contexts = ["pane", "workspace"]
+command = ["bash", "herdr/pane.sh", "game", "qbert"]
+
+[[actions]]
+id = "sokoban"
+title = "Herdr Arcade: play Sokoban"
+contexts = ["pane", "workspace"]
+command = ["bash", "herdr/pane.sh", "game", "sokoban"]
+
+[[actions]]
+id = "bomberman"
+title = "Herdr Arcade: play Bomberman"
+contexts = ["pane", "workspace"]
+command = ["bash", "herdr/pane.sh", "game", "bomberman"]
+
+[[actions]]
+id = "boulderdash"
+title = "Herdr Arcade: play Boulder Dash"
+contexts = ["pane", "workspace"]
+command = ["bash", "herdr/pane.sh", "game", "boulderdash"]

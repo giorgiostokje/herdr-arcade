@@ -1,6 +1,6 @@
 # herdr-arcade
 
-A small terminal arcade of eleven golden-era games in a
+A small terminal arcade of seventeen golden-era games in a
 [Herdr](https://herdr.dev) popup pane, aware of the coding agents in your
 session: when an agent needs attention, the game pauses itself and says so.
 Python 3.9+, stdlib only (`curses`).
@@ -24,8 +24,9 @@ a pane entrypoint for the menu plus one per game, and an action for each.
 | `<game id>` | open straight into that game; close it if it is already showing; switch to it from the menu or another game |
 
 Game ids, in the menu's release-year order: `breakout` (1976), `snake`
-(1976), `invaders` (1978), `pacman` (1980), `centipede`, `frogger`, `qix`
-(1981), `pengo`, `tron` (1982), `loderunner` (1983), `tetris` (1984).
+(1976), `invaders` (1978), `pacman` (1980), `centipede`, `frogger`,
+`donkeykong`, `qix` (1981), `pengo`, `tron`, `digdug`, `qbert`, `sokoban`
+(1982), `loderunner`, `bomberman` (1983), `boulderdash`, `tetris` (1984).
 
 The **menu** lists the games oldest first, with their year, best score and
 whether a saved game is waiting: `↑`/`↓` (or `j`/`k`) and `enter` to play,
@@ -87,10 +88,16 @@ so movement is one step per keypress (hold a key to auto-repeat).
 | Pac-Man | steer; a turn pressed early is taken at the next opening. 19×21 maze, four ghosts with the classic chase/scatter targeting, power pellets, extra life at 10,000. |
 | Centipede | move within the bottom zone, `space` fires. Hit segments become mushrooms and split the centipede; spider and flea as in the original. |
 | Frogger | hop per keypress. Five road and five river lanes, diving turtles, a timer per frog, five home bays and a bonus fly. |
+| Donkey Kong | walk and climb; `space` jumps the way you last moved (or straight up), `z`/`,` and `x`/`.` jump left/right. Fixed jump arc, falls of more than two rows kill, broken ladders stop short. 25m barrels (hammers, oil-drum fireballs) and 100m rivets alternate, faster each loop; the bonus timer is your clear bonus. |
 | Qix | move along safe lines; `space` toggles fast draw, `f` slow draw (double points). Close a shape to claim the side without the Qix; claim 75% to clear. Stopping mid-line lights a fuse. |
 | Pengo | move, `space` (or `enter`) pushes the ice block in front, or shakes the wall to stun Sno-Bees touching it. Line up the three diamonds for a bonus. |
 | Tron | steer the light cycle; 1 AI rival at level 1, up to 3 later. The AI looks ahead with a flood fill. |
+| Dig Dug | dig as you move; `space` (or `enter`) fires the pump, pump again to inflate and pop. Popping deeper scores more, Fygars double from the side; undermined rocks fall and crush (multi-kill bonus); a vegetable follows two dropped rocks; the last monster flees top-left. |
+| Q*bert | arrows turned 45°: `↑` up-right, `→` down-right, `↓` down-left, `←` up-left (`wasd`/`hjkl` follow the arrows); `y`/`u`/`b`/`n` are the diagonals as they sit on the keyboard. One hop per keypress, two queued in the air. Discs carry you to the top; lure Coily off one for 500. |
+| Sokoban | walk and push; `u`/`z` undo, `y` redo, `r` restarts the level (replayable with `y`), `[`/`]` or `b`/`n` step through unlocked levels, `x` then `y` starts a new game. 32 levels; each solved level scores 1000 minus your best moves (at least 100). |
 | Lode Runner | move, climb ladders, hang on bars; `z`/`,` dig left, `x`/`.` dig right. Collect all gold, then climb the escape ladder. Five original levels. |
+| Bomberman | move, `space` drops a bomb, `x` sets off the oldest one once you have the remote. Flames chain bombs and burn the first soft block; power-ups and the exit hide under blocks; the exit opens once every monster is gone. Bombing the exit or a power-up spawns more monsters. |
+| Boulder Dash | move and dig; `space` then a direction snaps (dig or grab next to you without moving). Falling boulders and diamonds kill, and they roll off round things. Collect the quota, then reach the exit before time runs out; 8 caves with fireflies, butterflies, amoeba and magic walls. |
 | Tetris | `←`/`→` move, `↑` rotate, `↓` soft drop, `space` hard drop, `c` hold (vi keys work; wasd does not). 7-bag, ghost piece, 3-piece preview, line-clear animation. |
 
 ## Persistence

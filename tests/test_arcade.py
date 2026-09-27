@@ -36,7 +36,7 @@ class MenuLayoutTest(unittest.TestCase):
         self.assertLessEqual(abs(lx - (93 - (ax + aw))), 1)
 
     def test_degrades_by_size(self):
-        narrow = arcade.menu_layout(50, 24)
+        narrow = arcade.menu_layout(50, 28)
         self.assertIsNone(narrow["agents"])
         self.assertIsNotNone(narrow["title"])
         short = arcade.menu_layout(77, 12)

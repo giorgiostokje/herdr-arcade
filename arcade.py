@@ -47,10 +47,16 @@ GAMES = (
     ("pacman", "Pac-Man", "pacman", "eat the dots, dodge the ghosts", 1980),
     ("centipede", "Centipede", "centipede", "blast the centipede through the mushrooms", 1981),
     ("frogger", "Frogger", "frogger", "cross the road and the river, get home", 1981),
+    ("donkeykong", "Donkey Kong", "donkeykong", "jump the barrels, climb to the top", 1981),
     ("qix", "Qix", "qix", "claim 75% of the field, dodge the Qix", 1981),
     ("pengo", "Pengo", "pengo", "slide ice blocks, crush the Sno-Bees", 1982),
     ("tron", "Tron", "tron", "light cycles: box them in, don't crash", 1982),
+    ("digdug", "Dig Dug", "digdug", "tunnel, pump and drop rocks on monsters", 1982),
+    ("qbert", "Q*bert", "qbert", "hop the pyramid, flip every cube", 1982),
+    ("sokoban", "Sokoban", "sokoban", "push every crate onto a goal", 1982),
     ("loderunner", "Lode Runner", "loderunner", "grab the gold, dig traps for the guards", 1983),
+    ("bomberman", "Bomberman", "bomberman", "bomb the blocks and monsters, find the exit", 1983),
+    ("boulderdash", "Boulder Dash", "boulderdash", "dig for diamonds, dodge falling boulders", 1984),
     ("tetris", "Tetris", "tetris", "stack falling blocks, clear lines", 1984),
 )
 GAME_IDS = tuple(g[0] for g in GAMES)
@@ -81,7 +87,7 @@ def menu_layout(cols: int, rows: int, n_games: int = len(GAMES)) -> dict:
         return plan
     agents_w = side_width(cols - 2, list_w)
     content_w = list_w + (1 + agents_w if agents_w else 0)
-    show_title = rows >= len(TITLE) + 1 + full_h + 3 and cols >= TITLE_W + 2
+    show_title = rows >= len(TITLE) + 1 + full_h + 2 and cols >= TITLE_W + 2
     block_h = list_h + (len(TITLE) + 1 if show_title else 0)
     y, x0 = center_origin(cols, rows - 1, content_w, block_h)
     if show_title:
