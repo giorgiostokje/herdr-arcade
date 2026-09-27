@@ -1,0 +1,194 @@
+id = "stokje-dev.arcade"
+name = "Herdr Arcade"
+version = "2.1.0"
+min_herdr_version = "0.9.1"
+platforms = ["macos", "linux"]
+description = "Terminal arcade (Tetris, Pac-Man) in a popup pane that pauses itself when a session agent needs attention."
+
+# One entrypoint per start screen: the splash menu, and each game directly
+# (what the per-game actions below open, so a key binding can jump straight
+# into a game). A fixed 96x30 popup (93x28 inner area, 3 cols and 2 rows of
+# chrome) overlays the layout instead of disturbing it; every screen lays out
+# for that size first and adapts down to smaller panes.
+[[panes]]
+id = "arcade"
+title = "Herdr Arcade"
+placement = "popup"
+width = 96
+height = 30
+command = ["sh", "-c", "exec python3 \"$HERDR_PLUGIN_ROOT/arcade.py\""]
+
+[[panes]]
+id = "tetris"
+title = "Herdr Arcade: tetris"
+placement = "popup"
+width = 96
+height = 30
+command = ["sh", "-c", "exec python3 \"$HERDR_PLUGIN_ROOT/arcade.py\" --game tetris"]
+
+[[panes]]
+id = "pacman"
+title = "Herdr Arcade: pac-man"
+placement = "popup"
+width = 96
+height = 30
+command = ["sh", "-c", "exec python3 \"$HERDR_PLUGIN_ROOT/arcade.py\" --game pacman"]
+
+[[panes]]
+id = "snake"
+title = "Herdr Arcade: snake"
+placement = "popup"
+width = 96
+height = 30
+command = ["sh", "-c", "exec python3 \"$HERDR_PLUGIN_ROOT/arcade.py\" --game snake"]
+
+[[panes]]
+id = "breakout"
+title = "Herdr Arcade: breakout"
+placement = "popup"
+width = 96
+height = 30
+command = ["sh", "-c", "exec python3 \"$HERDR_PLUGIN_ROOT/arcade.py\" --game breakout"]
+
+[[panes]]
+id = "invaders"
+title = "Herdr Arcade: space invaders"
+placement = "popup"
+width = 96
+height = 30
+command = ["sh", "-c", "exec python3 \"$HERDR_PLUGIN_ROOT/arcade.py\" --game invaders"]
+
+[[panes]]
+id = "centipede"
+title = "Herdr Arcade: centipede"
+placement = "popup"
+width = 96
+height = 30
+command = ["sh", "-c", "exec python3 \"$HERDR_PLUGIN_ROOT/arcade.py\" --game centipede"]
+
+[[panes]]
+id = "frogger"
+title = "Herdr Arcade: frogger"
+placement = "popup"
+width = 96
+height = 30
+command = ["sh", "-c", "exec python3 \"$HERDR_PLUGIN_ROOT/arcade.py\" --game frogger"]
+
+[[panes]]
+id = "pengo"
+title = "Herdr Arcade: pengo"
+placement = "popup"
+width = 96
+height = 30
+command = ["sh", "-c", "exec python3 \"$HERDR_PLUGIN_ROOT/arcade.py\" --game pengo"]
+
+[[panes]]
+id = "tron"
+title = "Herdr Arcade: tron"
+placement = "popup"
+width = 96
+height = 30
+command = ["sh", "-c", "exec python3 \"$HERDR_PLUGIN_ROOT/arcade.py\" --game tron"]
+
+[[panes]]
+id = "qix"
+title = "Herdr Arcade: qix"
+placement = "popup"
+width = 96
+height = 30
+command = ["sh", "-c", "exec python3 \"$HERDR_PLUGIN_ROOT/arcade.py\" --game qix"]
+
+[[panes]]
+id = "loderunner"
+title = "Herdr Arcade: Lode Runner"
+placement = "popup"
+width = 96
+height = 30
+command = ["sh", "-c", "exec python3 \"$HERDR_PLUGIN_ROOT/arcade.py\" --game loderunner"]
+
+# toggle/open/close manage the popup on the menu. The per-game actions are
+# the ones to bind to keys: each opens its game directly, closes the popup
+# when that game is already showing, and switches over from any other screen.
+[[actions]]
+id = "toggle"
+title = "Herdr Arcade: toggle menu"
+contexts = ["pane", "workspace"]
+command = ["bash", "herdr/pane.sh", "toggle"]
+
+[[actions]]
+id = "open"
+title = "Herdr Arcade: open menu"
+contexts = ["pane", "workspace"]
+command = ["bash", "herdr/pane.sh", "open"]
+
+[[actions]]
+id = "close"
+title = "Herdr Arcade: close"
+contexts = ["pane", "workspace"]
+command = ["bash", "herdr/pane.sh", "close"]
+
+[[actions]]
+id = "tetris"
+title = "Herdr Arcade: play tetris"
+contexts = ["pane", "workspace"]
+command = ["bash", "herdr/pane.sh", "game", "tetris"]
+
+[[actions]]
+id = "pacman"
+title = "Herdr Arcade: play pac-man"
+contexts = ["pane", "workspace"]
+command = ["bash", "herdr/pane.sh", "game", "pacman"]
+
+[[actions]]
+id = "snake"
+title = "Herdr Arcade: play snake"
+contexts = ["pane", "workspace"]
+command = ["bash", "herdr/pane.sh", "game", "snake"]
+
+[[actions]]
+id = "breakout"
+title = "Herdr Arcade: play breakout"
+contexts = ["pane", "workspace"]
+command = ["bash", "herdr/pane.sh", "game", "breakout"]
+
+[[actions]]
+id = "invaders"
+title = "Herdr Arcade: play space invaders"
+contexts = ["pane", "workspace"]
+command = ["bash", "herdr/pane.sh", "game", "invaders"]
+
+[[actions]]
+id = "centipede"
+title = "Herdr Arcade: play centipede"
+contexts = ["pane", "workspace"]
+command = ["bash", "herdr/pane.sh", "game", "centipede"]
+
+[[actions]]
+id = "frogger"
+title = "Herdr Arcade: play frogger"
+contexts = ["pane", "workspace"]
+command = ["bash", "herdr/pane.sh", "game", "frogger"]
+
+[[actions]]
+id = "pengo"
+title = "Herdr Arcade: play pengo"
+contexts = ["pane", "workspace"]
+command = ["bash", "herdr/pane.sh", "game", "pengo"]
+
+[[actions]]
+id = "tron"
+title = "Herdr Arcade: play tron"
+contexts = ["pane", "workspace"]
+command = ["bash", "herdr/pane.sh", "game", "tron"]
+
+[[actions]]
+id = "qix"
+title = "Herdr Arcade: play qix"
+contexts = ["pane", "workspace"]
+command = ["bash", "herdr/pane.sh", "game", "qix"]
+
+[[actions]]
+id = "loderunner"
+title = "Herdr Arcade: play Lode Runner"
+contexts = ["pane", "workspace"]
+command = ["bash", "herdr/pane.sh", "game", "loderunner"]
