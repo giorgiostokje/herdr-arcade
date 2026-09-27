@@ -1,6 +1,6 @@
 id = "stokje-dev.arcade"
 name = "Herdr Arcade"
-version = "2.1.0"
+version = "2.2.0"
 min_herdr_version = "0.9.1"
 platforms = ["macos", "linux"]
 description = "Seventeen golden-era arcade games in a popup pane that pauses itself when a session agent needs attention."

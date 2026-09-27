@@ -108,7 +108,8 @@ sequence and the ghosts' frightened moves continue identically — is saved
 atomically to `<game>-game.json` in the plugin state dir. Starting that game
 again resumes it paused behind a "resumed — press any key" banner; a corrupt
 or incompatible save is ignored silently. `r` (restart) and game over clear
-the save. Best scores live in `<game>-hiscore.json` and show in each game's
+the save, except in Sokoban, where `r` restarts only the level and a new game
+(`x`, confirmed with `y`) clears it. Best scores live in `<game>-hiscore.json` and show in each game's
 stats box and on the menu.
 
 ## Agent awareness
